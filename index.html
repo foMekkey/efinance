@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+       <meta charset="UTF-8">
+       <title>Request Initialization</title>
+       <meta name="viewport" content="width=device-width, user-scalable=no">
+       <link href="https://fonts.googleapis.com/css?family=Lato:400,100,700,900" rel="stylesheet" type="text/css">
+       <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+       <div class="page">
+              <section class="card register">
+                     <form name="myform" action="index.php" method="post">
+
+                            <div class="textintro">
+                                   <h1>Request Initialization</h1>
+                            </div>
+
+                            <fieldset>
+                                   <input type="text" name="sender_id" placeholder="Sender ID" value="01001" required>
+                                   <input type="text" name="sender_name" placeholder="Sender Name" value="MSAD"
+                                          required>
+                                   <input type="text" name="efinance_password" placeholder="Efinance Password"
+                                          value="1234" required>
+                                   <input type="text" name="service_code" placeholder="Service Code" value="010011"
+                                          required>
+                                   <input type="text" name="account_code" placeholder="Account Code" value="500"
+                                          required>
+                                   <input type="text" name="account_amount" placeholder="Account Amount" value="30"
+                                          required>
+                                   <input type="text" name="payment_gateway_url"
+                                          value="https://paymenttest.khales.com.eg/PSPaymentgateway/PaymentGatewayPages/RedirectPages/CardPaymentRequestIntiation.aspx"
+                                          placeholder="Payment Gateway URL" required>
+                                   <input type="text" name="confirmation_url"
+                                          value="http://localhost:8080/Payment/confirm.php"
+                                          placeholder="Confirmation URL" required>
+                                   <input type="text" name="confirmation_redirect_url"
+                                          value="http://localhost:8080/Payment/return.php"
+                                          placeholder="Confirmation Redirect URL" required>
+                            </fieldset>
+                            <!--    <fieldset>-->
+                            <!--      <input type="text" name="sender_id" -->
+                            <!--        placeholder="Sender ID" value="01001" required>-->
+                            <!--      <input type="text" name="sender_name" value="Ud-Solutions"-->
+                            <!--        placeholder="Sender Name" required>-->
+                            <!--      <input type="text" name="efinance_password" value="1234"-->
+                            <!--        placeholder="Efinance Password" required>-->
+                            <!--		-->
+                            <!--	  <input type="text" name="service_code" value="010011"-->
+                            <!--        placeholder="Service Code" required>-->
+                            <!--		-->
+                            <!--		<input type="text" name="account_code" value="500"-->
+                            <!--        placeholder="Account Code" required>-->
+                            <!--		<input type="text" name="account_amount" value="30"-->
+                            <!--        placeholder="Account Amount" required>-->
+                            <!--		-->
+                            <!--      <input type="text" name="payment_gateway_url"-->
+                            <!--             value="https://www.khales.com.eg/PSTestPayment/PaymentGatewayPages/RedirectPages/CardPaymentRequestIntiation.aspx"-->
+                            <!--        placeholder="Payment Gateway URL" required>-->
+                            <!--      <input type="text" name="confirmation_url" value="http://localhost:8080/Payment/confirm.php"-->
+                            <!--        placeholder="Confirmation URL" required>-->
+                            <!--      <input type="text" name="confirmation_redirect_url" value="http://localhost:8080/Payment/return.php"-->
+                            <!--        placeholder="Confirmation Redirect URL" required>-->
+                            <!--    </fieldset>-->
+
+                            <button type="submit" class="btn">Submit</button>
+                     </form>
+              </section>
+       </div>
+</body>
+
+</html>

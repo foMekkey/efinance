@@ -1,0 +1,9 @@
+{
+    "minimum-stability": "dev",
+	"prefer-stable": true,
+    "require": {
+        "symfony/serializer": "^3.4",
+		"laravel/framework": "4.0.*",
+		"neoxia/laravel-openssl-encryption": "1.0.*"
+    }
+}
