@@ -34,7 +34,7 @@ class Initiation
             $HasedRequestObject);
         $arr = array('SenderID' => $senderID, 'RandomSecret' => $randomSecret,
             'RequestObject' => $requestObject, 'HasedRequestObject' => $HasedRequestObject);
-        //print '<pre>'; print_r($arr); exit;
+        // print '<pre>'; print_r($arr); exit;
         return $arr;
     }
 
@@ -68,12 +68,12 @@ class Initiation
         $req->DecryptedRequestObject->SettlementAmounts = array($SettlementAmounts);
         $req->DecryptedRequestObject->PaymentConfirmationUrl = $params['confirmation_url'];
         $req->DecryptedRequestObject->PaymentConfirmationRedirectUrl = $params['confirmation_redirect_url'];
-        $req->DecryptedRequestObject->ExpiryDate = date("Y-m-d", strtotime('+24 hours'));
+        $req->DecryptedRequestObject->ExpiryDate = date("Y-m-d", strtotime('+6 hours'));
         $req->DecryptedRequestObject->IP = $params['server_ip'];
         $mechanism['mechanismType'] = "NotSet";
         $req->DecryptedRequestObject->setPaymentMechanism($this->CreateEmptyPaymentMechanismObject($mechanism));
         $req->DecryptedRequestObject->setUserUniqueIdentifier($this->GenerateRandomValue8());
-        //print '<pre>'; print_r($req->DecryptedRequestObject);exit;
+        // print '<pre>'; print_r($req->DecryptedRequestObject);exit;
         return $req->DecryptedRequestObject;
     }
 

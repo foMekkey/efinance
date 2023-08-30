@@ -14,7 +14,7 @@ $params = array(
     "payment_gateway_url" => $_POST['payment_gateway_url'],
     "confirmation_url" => $_POST['confirmation_url'],
     "confirmation_redirect_url" => $_POST['confirmation_redirect_url'],
-    "server_ip" => "::1",
+    "server_ip" => $_SERVER['REMOTE_ADDR'],
     "certificate_path" => $_SERVER['DOCUMENT_ROOT'] . "/efinance/certificates/InternetPaymentCrt.cer",
     "client_order_id" => '123' //$order_info['order_id']
 );
@@ -48,13 +48,15 @@ $mechanism = array(
 
 $url = $initiator->initiatePaymentRequest($params, $mechanism);
 
+print_r($url);
+
 ?>
 
 <form method="post" id="initiationForm" action="<?php echo $_POST['payment_gateway_url']; ?>">
-    <input type="hidden" name="SenderID" value="<?php $url['SenderID'] ?>">
-    <input type="hidden" name="RandomSecret" value="<?php $url['RandomSecret'] ?>">
-    <input type="hidden" name="RequestObject" value="<?php $url['RequestObject'] ?>">
-    <input type="hidden" name="HasedRequestObject" value="<?php $url['HasedRequestObject'] ?>">
+    <input type="hidden" name="SenderID" value="<?php echo $url['SenderID'] ?>">
+    <input type="hidden" name="RandomSecret" value="<?php echo $url['RandomSecret'] ?>">
+    <input type="hidden" name="RequestObject" value="<?php echo $url['RequestObject'] ?>">
+    <input type="hidden" name="HasedRequestObject" value="<?php echo $url['HasedRequestObject'] ?>">
     <input type="submit" id="sendButton" value="send">
 </form>
 <script type="text/javascript">
